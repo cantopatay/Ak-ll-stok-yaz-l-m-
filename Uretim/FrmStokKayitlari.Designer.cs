@@ -116,7 +116,7 @@
             this.sbtnStokListesi.Name = "sbtnStokListesi";
             this.sbtnStokListesi.Size = new System.Drawing.Size(44, 32);
             this.sbtnStokListesi.TabIndex = 3;
-            this.sbtnStokListesi.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.sbtnStokListesi.Click += new System.EventHandler(this.sbtnStokListesi_Click);
             // 
             // sbtnGrupKodListesi
             // 
@@ -230,6 +230,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmStokKayitlari";
             this.Text = "Stok Kartı Kayıtları";
+            this.Activated += new System.EventHandler(this.FrmStokKayitlari_Activated);
             this.Load += new System.EventHandler(this.FrmStokKayitlari_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtStokKodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStokAdi.Properties)).EndInit();

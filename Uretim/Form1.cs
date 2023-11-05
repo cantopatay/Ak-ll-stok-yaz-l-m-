@@ -22,5 +22,10 @@ namespace Uretim
             FrmStokKayitlari frm = new FrmStokKayitlari();
             frm.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

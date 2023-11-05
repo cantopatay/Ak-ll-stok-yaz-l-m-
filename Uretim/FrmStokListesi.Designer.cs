@@ -104,7 +104,7 @@
             this.txtGrupKodu.Name = "txtGrupKodu";
             this.txtGrupKodu.Size = new System.Drawing.Size(58, 22);
             this.txtGrupKodu.TabIndex = 4;
-            this.txtGrupKodu.EditValueChanged += new System.EventHandler(this.txtGrupKodu_EditValueChanged);
+          
             this.txtGrupKodu.TextChanged += new System.EventHandler(this.txtGrupKodu_TextChanged);
             // 
             // labelControl3
@@ -137,12 +137,14 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+           
             // 
             // gridView1
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // FrmStokListesi
             // 

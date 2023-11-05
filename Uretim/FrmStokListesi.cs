@@ -13,6 +13,7 @@ namespace Uretim
 {
     public partial class FrmStokListesi : Form
     {
+        public static string stokkodu;
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-T63P1D5\\SQLEXPRESS;Initial Catalog=URETIM;Integrated Security=True");
         public FrmStokListesi()
         {
@@ -30,6 +31,7 @@ namespace Uretim
         }
         private void FrmStokListesi_Load(object sender, EventArgs e)
         {
+            gridView1.OptionsBehavior.Editable = false; // tablo açılırken içerisinde oynama yapılmasını engelleme
             arama();
         }
 
@@ -43,14 +45,27 @@ namespace Uretim
             arama();
         }
 
-        private void txtGrupKodu_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void txtGrupKodu_TextChanged(object sender, EventArgs e)
         {
             arama();
+        }
+
+     
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            DataRow satir = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            if (stokkodu == "kayit")
+            {
+                stokkodu = satir["STOK_KODU"].ToString();
+                this.Hide();
+                FrmStokKayitlari frm = new FrmStokKayitlari();
+                frm.Activate();
+            }
+            else
+            {
+
+            }
         }
     }
 }

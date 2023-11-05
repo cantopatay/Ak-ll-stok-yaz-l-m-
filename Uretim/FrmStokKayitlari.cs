@@ -45,18 +45,15 @@ namespace Uretim
             
             conn.Close();
         }
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            FrmStokListesi frm = new FrmStokListesi();
-            frm.Show();
-        }
+        
 
         private void sbtnGrupKodListesi_Click(object sender, EventArgs e)
         {
+            
             FrmStokGrupKodlari frm = new FrmStokGrupKodlari();
             frm.Show();
         }
-
+        
         private void FrmStokKayitlari_Load(object sender, EventArgs e)
         {
 
@@ -82,6 +79,19 @@ namespace Uretim
                 else { };
             }
             
+        }
+
+        private void FrmStokKayitlari_Activated(object sender, EventArgs e)
+        {
+            txtStokKodu.Text = FrmStokListesi.stokkodu;
+            stokbilgisicekme();
+        }
+
+        private void sbtnStokListesi_Click(object sender, EventArgs e)
+        {
+            FrmStokListesi.stokkodu = "kayit";
+            FrmStokListesi frm = new FrmStokListesi();
+            frm.Show();
         }
     }
 }
