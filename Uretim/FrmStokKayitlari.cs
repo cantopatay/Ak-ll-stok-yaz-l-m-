@@ -101,6 +101,7 @@ namespace Uretim
             }
             else
             {
+                FrmStokListesi.stokkodu = txtStokKodu.Text;
                 stokkartikontrol();
                 if (Convert.ToUInt16(x1) == 1)
                 {

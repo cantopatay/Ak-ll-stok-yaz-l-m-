@@ -72,5 +72,10 @@ namespace Uretim
         {
             stokkodu = ""; 
         }
+
+        private void gridView1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -87,7 +87,6 @@
             this.labelControl2.Size = new System.Drawing.Size(70, 22);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Grup adı";
-            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // labelControl1
             // 
@@ -105,6 +104,7 @@
             this.txtGrupKodu.Name = "txtGrupKodu";
             this.txtGrupKodu.Size = new System.Drawing.Size(159, 22);
             this.txtGrupKodu.TabIndex = 2;
+            this.txtGrupKodu.Leave += new System.EventHandler(this.txtGrupKodu_Leave);
             // 
             // txtGrupAdi
             // 
@@ -121,7 +121,7 @@
             this.groupBox2.Size = new System.Drawing.Size(346, 339);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Stok Listesi";
+            this.groupBox2.Text = "Grup Kod Listesi";
             // 
             // gridControl1
             // 
@@ -139,6 +139,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
             // 
             // FrmStokGrupKodlari
             // 
@@ -151,6 +152,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmStokGrupKodlari";
             this.Text = "Stok Grup Kodları";
+            this.Load += new System.EventHandler(this.FrmStokGrupKodlari_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGrupKodu.Properties)).EndInit();
