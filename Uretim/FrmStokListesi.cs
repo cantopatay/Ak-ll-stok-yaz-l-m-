@@ -67,5 +67,10 @@ namespace Uretim
 
             }
         }
+
+        private void FrmStokListesi_FormClosed(object sender, FormClosedEventArgs e) //eğer stok listesi manuel olarak kapatılırsa 
+        {
+            stokkodu = ""; 
+        }
     }
 }

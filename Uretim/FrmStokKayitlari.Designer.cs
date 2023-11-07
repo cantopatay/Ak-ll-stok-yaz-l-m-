@@ -80,7 +80,6 @@
             this.txtStokAdi.Name = "txtStokAdi";
             this.txtStokAdi.Size = new System.Drawing.Size(204, 22);
             this.txtStokAdi.TabIndex = 4;
-            this.txtStokAdi.Leave += new System.EventHandler(this.txtStokAdi_Leave);
             // 
             // labelControl2
             // 
@@ -98,6 +97,7 @@
             this.txtGrupKodu.Name = "txtGrupKodu";
             this.txtGrupKodu.Size = new System.Drawing.Size(58, 22);
             this.txtGrupKodu.TabIndex = 5;
+            this.txtGrupKodu.Leave += new System.EventHandler(this.txtGrupKodu_Leave);
             // 
             // labelControl3
             // 
@@ -129,6 +129,7 @@
             // 
             // txtGrupAdi
             // 
+            this.txtGrupAdi.Enabled = false;
             this.txtGrupAdi.Location = new System.Drawing.Point(255, 121);
             this.txtGrupAdi.Name = "txtGrupAdi";
             this.txtGrupAdi.Size = new System.Drawing.Size(90, 22);
@@ -231,6 +232,7 @@
             this.Name = "FrmStokKayitlari";
             this.Text = "Stok Kartı Kayıtları";
             this.Activated += new System.EventHandler(this.FrmStokKayitlari_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmStokKayitlari_FormClosed);
             this.Load += new System.EventHandler(this.FrmStokKayitlari_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtStokKodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStokAdi.Properties)).EndInit();

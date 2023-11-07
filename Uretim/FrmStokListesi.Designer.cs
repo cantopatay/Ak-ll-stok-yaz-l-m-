@@ -104,7 +104,6 @@
             this.txtGrupKodu.Name = "txtGrupKodu";
             this.txtGrupKodu.Size = new System.Drawing.Size(58, 22);
             this.txtGrupKodu.TabIndex = 4;
-          
             this.txtGrupKodu.TextChanged += new System.EventHandler(this.txtGrupKodu_TextChanged);
             // 
             // labelControl3
@@ -137,7 +136,6 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-           
             // 
             // gridView1
             // 
@@ -157,6 +155,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmStokListesi";
             this.Text = "Stok Listesi";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmStokListesi_FormClosed);
             this.Load += new System.EventHandler(this.FrmStokListesi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

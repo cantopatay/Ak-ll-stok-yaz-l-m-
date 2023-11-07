@@ -30,6 +30,27 @@ namespace Uretim
             
             conn.Close();
         }
+         string x2 = "0";
+        void grupkodukontrol()
+        {
+            conn.Open();
+            SqlCommand sorgu1 = new SqlCommand("select Count(*) from TBL_GRUPKOD where GRUP_KODU='"+ txtGrupKodu.Text+"'", conn);
+            SqlDataReader dr = sorgu1.ExecuteReader();
+            while (dr.Read())
+            {
+                x2 = dr[0].ToString();
+            }
+
+            conn.Close();
+        }
+        void temizle()
+        {
+            txtStokAdi.Text = "";
+            txtFiyat.Text = "";
+            txtGrupAdi.Text = "";
+            txtGrupKodu.Text = "";
+            txtKDVOrani.Text = "";
+        }
         void stokbilgisicekme()
         {
             conn.Open();
@@ -43,6 +64,18 @@ namespace Uretim
                 txtKDVOrani.Text = dr[4].ToString();
             }
             
+            conn.Close();
+        }
+        void grupbilgisicekme()
+        {
+            conn.Open();
+            SqlCommand sorgu1 = new SqlCommand("select GRUP_ADI from TBL_GRUPKOD where GRUP_KODU='"+txtGrupKodu.Text+"'", conn);
+            SqlDataReader dr = sorgu1.ExecuteReader();
+            while (dr.Read())
+            {
+                txtGrupAdi.Text = dr[0].ToString();
+            }
+
             conn.Close();
         }
         
@@ -59,10 +92,7 @@ namespace Uretim
 
         }
 
-        private void txtStokAdi_Leave(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private void txtStokKodu_Leave(object sender, EventArgs e)
         {
@@ -75,23 +105,55 @@ namespace Uretim
                 if (Convert.ToUInt16(x1) == 1)
                 {
                     stokbilgisicekme();
+                    grupbilgisicekme();
                 }
-                else { };
+                else
+                {
+                    temizle();
+                };
             }
             
         }
 
         private void FrmStokKayitlari_Activated(object sender, EventArgs e)
         {
-            txtStokKodu.Text = FrmStokListesi.stokkodu;
-            stokbilgisicekme();
+            if (FrmStokListesi.stokkodu == "")
+            {
+                temizle();
+                txtStokKodu.Text = "";
+            }
+            else //çift tıklayarak gelindiyse 
+            {
+                txtStokKodu.Text = FrmStokListesi.stokkodu;
+                stokbilgisicekme();
+                grupbilgisicekme();
+            }
+            
         }
 
         private void sbtnStokListesi_Click(object sender, EventArgs e)
-        {
+        {   
             FrmStokListesi.stokkodu = "kayit";
             FrmStokListesi frm = new FrmStokListesi();
             frm.Show();
+        }
+
+        private void txtGrupKodu_Leave(object sender, EventArgs e)
+        {
+            grupkodukontrol(); //grup kodu var mı yokmu test et
+            if(Convert.ToInt16(x2)==1) //eger varsa 
+            {
+                grupbilgisicekme(); //grupkodu.Texte gelen veriyi ata
+            }
+            else // yoksa 
+            {
+                txtGrupKodu.Focus();
+            }
+        }
+
+        private void FrmStokKayitlari_FormClosed(object sender, FormClosedEventArgs e) //stok kayıtları ekranı manuel olarak kapatıldığında 
+        {
+            FrmStokListesi.stokkodu = ""; //eski kayıt verileri temizlensin
         }
     }
 }
