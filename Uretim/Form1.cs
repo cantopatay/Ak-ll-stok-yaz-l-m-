@@ -27,5 +27,11 @@ namespace Uretim
         {
 
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmMusteriKayitlari frm = new FrmMusteriKayitlari();
+            frm.Show();
+        }
     }
 }

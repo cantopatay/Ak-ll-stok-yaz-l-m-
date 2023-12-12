@@ -89,7 +89,8 @@ namespace Uretim
         
         private void FrmStokKayitlari_Load(object sender, EventArgs e)
         {
-
+            txtFiyat.Text = "0,00";
+            txtKDVOrani.Text = "0,00";
         }
 
        
@@ -111,6 +112,9 @@ namespace Uretim
                 else
                 {
                     temizle();
+                    txtFiyat.Text = "0,00";
+                    txtKDVOrani.Text = "0,00";
+
                 };
             }
             
@@ -155,6 +159,55 @@ namespace Uretim
         private void FrmStokKayitlari_FormClosed(object sender, FormClosedEventArgs e) //stok kayıtları ekranı manuel olarak kapatıldığında 
         {
             FrmStokListesi.stokkodu = ""; //eski kayıt verileri temizlensin
+        }
+
+        private void sbtnKaydet_Click(object sender, EventArgs e)
+        {   
+            
+            stokkartikontrol();
+            if (Convert.ToInt16(x1) == 1)
+            {
+                //güncelleme
+                conn.Open();
+                SqlCommand sorgu1 = new SqlCommand("UPDATE TBL_STOKKAYITLARI SET STOK_ADI='"+txtStokAdi.Text+"',GRUPKODU='"+txtGrupKodu.Text+"',FIYAT='"+txtFiyat.Text.Replace(',','.')+"',KDV_ORANI='"+txtKDVOrani.Text.Replace(',', '.') + "' WHERE STOK_KODU='"+txtStokKodu.Text+"'", conn);
+                sorgu1.ExecuteNonQuery();
+                conn.Close();
+                temizle();
+                txtStokKodu.Text = "";
+                
+            }
+            else
+            {
+                //YENİ KAYIT EKLEME
+                conn.Open();
+                SqlCommand sorgu1 = new SqlCommand("INSERT INTO TBL_STOKKAYITLARI (STOK_KODU,STOK_ADI,GRUP_KODU,FIYAT,KDV_ORANI) VALUES('"+txtStokKodu.Text+"','"+txtStokAdi.Text+"','"+txtGrupKodu.Text+"','"+txtFiyat.Text.Replace(',', '.') + "','"+txtKDVOrani.Text.Replace(',', '.') + "')", conn);
+                sorgu1.ExecuteNonQuery();
+                conn.Close();
+                temizle();
+                txtStokKodu.Text = "";
+                
+            }
+        }
+
+        private void sbtnSil_Click(object sender, EventArgs e)
+        {
+            stokkartikontrol();
+            if (Convert.ToInt16(x1) == 1)
+            {
+                //sil
+                conn.Open();
+                SqlCommand sorgu1 = new SqlCommand("DELETE TBL_STOKKAYITLARI WHERE STOK_KODU='"+ txtStokKodu.Text+"'", conn);
+                sorgu1.ExecuteNonQuery();
+                conn.Close();
+                temizle();
+                txtStokKodu.Text = "";
+                
+            }
+            else
+            {
+                //zaten yok
+                MessageBox.Show("Bçyle bir stok kodu bulunamamaktadır.");
+            }
         }
     }
 }

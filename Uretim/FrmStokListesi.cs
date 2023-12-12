@@ -13,6 +13,7 @@ namespace Uretim
 {
     public partial class FrmStokListesi : Form
     {
+        
         public static string stokkodu;
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-T63P1D5\\SQLEXPRESS;Initial Catalog=URETIM;Integrated Security=True");
         public FrmStokListesi()

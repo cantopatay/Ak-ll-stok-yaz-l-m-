@@ -69,6 +69,7 @@
             this.sbtnKaydet.Name = "sbtnKaydet";
             this.sbtnKaydet.Size = new System.Drawing.Size(38, 35);
             this.sbtnKaydet.TabIndex = 4;
+            this.sbtnKaydet.Click += new System.EventHandler(this.sbtnKaydet_Click);
             // 
             // sbtnSil
             // 
@@ -77,6 +78,7 @@
             this.sbtnSil.Name = "sbtnSil";
             this.sbtnSil.Size = new System.Drawing.Size(38, 35);
             this.sbtnSil.TabIndex = 5;
+            this.sbtnSil.Click += new System.EventHandler(this.sbtnSil_Click);
             // 
             // labelControl2
             // 

@@ -165,6 +165,7 @@
             // 
             // txtFiyat
             // 
+            this.txtFiyat.EditValue = "0,00";
             this.txtFiyat.Location = new System.Drawing.Point(121, 30);
             this.txtFiyat.Name = "txtFiyat";
             this.txtFiyat.Size = new System.Drawing.Size(79, 22);
@@ -182,6 +183,7 @@
             // 
             // txtKDVOrani
             // 
+            this.txtKDVOrani.EditValue = "0,00";
             this.txtKDVOrani.Location = new System.Drawing.Point(121, 80);
             this.txtKDVOrani.Name = "txtKDVOrani";
             this.txtKDVOrani.Size = new System.Drawing.Size(79, 22);
@@ -208,6 +210,7 @@
             this.sbtnKaydet.Size = new System.Drawing.Size(109, 37);
             this.sbtnKaydet.TabIndex = 11;
             this.sbtnKaydet.Text = "Kaydet";
+            this.sbtnKaydet.Click += new System.EventHandler(this.sbtnKaydet_Click);
             // 
             // sbtnSil
             // 
@@ -217,12 +220,13 @@
             this.sbtnSil.Size = new System.Drawing.Size(109, 37);
             this.sbtnSil.TabIndex = 12;
             this.sbtnSil.Text = "Sil";
+            this.sbtnSil.Click += new System.EventHandler(this.sbtnSil_Click);
             // 
             // FrmStokKayitlari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 365);
+            this.ClientSize = new System.Drawing.Size(390, 408);
             this.Controls.Add(this.sbtnSil);
             this.Controls.Add(this.sbtnKaydet);
             this.Controls.Add(this.groupBox2);

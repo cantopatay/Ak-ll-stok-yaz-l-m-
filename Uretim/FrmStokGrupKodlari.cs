@@ -29,6 +29,11 @@ namespace Uretim
 
             conn.Close();
         }
+        void temizle()
+        {
+            txtGrupAdi.Text = "";
+            txtGrupKodu.Text = "";
+        }
         void grupbilgisicekme()
         {
             conn.Open();
@@ -80,6 +85,50 @@ namespace Uretim
             else {
                 txtGrupAdi.Text = "";
             }
+        }
+
+        private void sbtnKaydet_Click(object sender, EventArgs e)
+        {
+            grupkodukontrol();
+            if (Convert.ToInt16(x1)== 1) //eğer aynı grupkodundan varsa
+            {
+                //güncelleme
+                conn.Open();
+                SqlCommand sorgu1 = new SqlCommand("UPDATE TBL_GRUPKOD SET GRUP_ADI='"+txtGrupAdi.Text+"' WHERE GRUP_KODU='"+txtGrupKodu.Text+"'", conn);
+                sorgu1.ExecuteNonQuery();
+                conn.Close();
+                temizle();
+                grupkodulisteleme();
+            }
+            else
+            {
+                //YENİ KAYIT EKLEME
+                conn.Open();
+                SqlCommand sorgu1 = new SqlCommand("INSERT INTO TBL_GRUPKOD (GRUP_KODU,GRUP_ADI)VALUES ('"+txtGrupKodu.Text+"','"+txtGrupAdi.Text+"')", conn);
+                sorgu1.ExecuteNonQuery();
+                conn.Close();
+                temizle();
+                grupkodulisteleme();
+            }
+        }
+
+        private void sbtnSil_Click(object sender, EventArgs e)
+        {
+            grupkodukontrol();
+            if (Convert.ToInt16(x1) == 1)
+            {
+                conn.Open();
+                SqlCommand sorgu1 = new SqlCommand("DELETE TBL_GRUPKOD WHERE GRUP_KODU='" + txtGrupKodu.Text + "'", conn);
+                sorgu1.ExecuteNonQuery();
+                conn.Close();
+                temizle();
+                grupkodulisteleme();
+            }
+            else
+            {
+
+            }
+          
         }
     }
 }
