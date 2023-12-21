@@ -34,9 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,19 +60,73 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMusteriKayitlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriKayitlari.Designer.cs">
+      <DependentUpon>FrmMusteriKayitlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMusteriListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriListesi.Designer.cs">
+      <DependentUpon>FrmMusteriListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSiparisler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSiparisler.Designer.cs">
+      <DependentUpon>FrmSiparisler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSiparisListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSiparisListesi.Designer.cs">
+      <DependentUpon>FrmSiparisListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStokGrupKodlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStokGrupKodlari.Designer.cs">
+      <DependentUpon>FrmStokGrupKodlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStokKayitlari.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStokKayitlari.Designer.cs">
       <DependentUpon>FrmStokKayitlari.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmStokListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStokListesi.Designer.cs">
+      <DependentUpon>FrmStokListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMusteriKayitlari.resx">
+      <DependentUpon>FrmMusteriKayitlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMusteriListesi.resx">
+      <DependentUpon>FrmMusteriListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSiparisler.resx">
+      <DependentUpon>FrmSiparisler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSiparisListesi.resx">
+      <DependentUpon>FrmSiparisListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStokGrupKodlari.resx">
+      <DependentUpon>FrmStokGrupKodlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmStokKayitlari.resx">
       <DependentUpon>FrmStokKayitlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStokListesi.resx">
+      <DependentUpon>FrmStokListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
